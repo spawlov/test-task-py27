@@ -1,0 +1,56 @@
+{% extends 'default.html' %}
+{% load static %}
+{% block content %}
+    <main class="form-signin w-100 m-auto">
+        <form action="" method="post">
+            {{ form.non_field_errors }}
+            {{ form.email.errors }}
+            {% csrf_token %}
+            <img class="mb-4" src="{% static 'img/bootstrap-logo.svg' %}" alt="" width="72" height="57">
+            <h1 class="h5 mb-3 fw-normal">Подписаться на рассылку</h1>
+                <div class="form-floating">
+                    <input
+                            type="email"
+                            class="form-control text-center"
+                            id="{{ form.email.id_for_label }}"
+                            name="{{ form.email.name }}"
+                            required
+                            placeholder="name@example.com">
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input
+                            type="text"
+                            class="form-control text-center"
+                            id="{{ form.firstname.id_for_label }}"
+                            name="{{ form.firstname.name }}"
+                            required
+                            placeholder="Имя">
+                    <label for="{{ form.firstname.id_for_label }}">Имя</label>
+                </div>
+                <div class="form-floating">
+                    <input
+                            type="text"
+                            class="form-control text-center"
+                            id="{{ form.lastname.id_for_label }}"
+                            name="{{ form.lastname.name }}"
+                            required
+                            placeholder="Фамилия">
+                    <label for="{{ form.lastname.id_for_label }}">Фамилия</label>
+                </div>
+                <div class="form-floating">
+                    <input
+                            type="date"
+                            class="form-control text-center"
+                            id="{{ form.birthday.id_for_label }}"
+                            name="{{ form.birthday.name }}"
+                            required
+                            placeholder="Дата рождения">
+                    <label for="{{ form.birthday.id_for_label }}">Дата рождения</label>
+                </div>
+                <div class="form-floating">
+                    <button class="w-100 btn btn-lg btn-outline-primary mt-3" type="submit">Подписаться</button>
+                </div>
+        </form>
+    </main>
+{% endblock content %}
