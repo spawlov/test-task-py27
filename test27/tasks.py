@@ -6,7 +6,6 @@ from string import Template
 
 from django.conf import settings
 from django.core import mail
-from django.utils import timezone
 
 from .models import Mailing, Subscriber
 
