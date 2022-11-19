@@ -25,6 +25,7 @@ class SuccessSubscribe(ListView):
 
 
 def unsubscribe(request):
+    """Отписка от рассылки"""
     user = get_object_or_404(Subscriber, email=request.GET.get('user_email'))
     user.delete()
     return HttpResponse(
