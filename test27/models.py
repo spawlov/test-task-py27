@@ -13,9 +13,6 @@ class Subscriber(models.Model):
     birthday = models.DateField(verbose_name='Дата рождения')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Добавлен')
 
-    # def get_absolute_url(self):
-    #     return reverse('test27:subscribed')
-
     def __str__(self):
         return self.email
 
