@@ -33,6 +33,7 @@ def send_emails_to_subscribers(mailing_id):
             # Подготовка писем и отправка за одно подключение
             for email, firstname, lastname, birthday in mailing_list:
                 replace_dict = {
+                    'email': email,
                     'firstname': firstname,
                     'lastname': lastname,
                     'birthday': birthday,
